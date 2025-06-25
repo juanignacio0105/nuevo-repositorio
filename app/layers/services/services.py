@@ -59,9 +59,10 @@ def getAllFavourites(request):
         return []
     else:
         user = get_user(request)
-
         favourite_list = repositories.get_all_favourites(user) # buscamos desde el repositories.py TODOS Los favoritos del usuario (variable 'user').
-        mapped_favourites = []
+        return favourite_list
+    
+    
         for favourite in favourite_list:
             card = translator.fromFavouriteIntoCard(favourite)  # desde un favorito obtenemos la Card
             mapped_favourites.append(card)
