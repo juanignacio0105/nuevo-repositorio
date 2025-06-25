@@ -1,4 +1,4 @@
 from app.config import config
 
 def version(request):
-    return {'VERSION': config.VERSION} 
+    return {'VERSION': config.VERSION}    
